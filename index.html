@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Javier Díaz - Mi página Web</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" > 
+        <link rel="icon" href="https://politecnics.barcelona/wp-content/uploads/favicon-politecnics.png">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script src="https://kit.fontawesome.com/06b3e2e45a.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../style.css">
+        <script>
+            function displayPopUp(){
+                var l = document.getElementById("login");
+                var s = document.getElementById("signin");
+                if (l.style.display === "none" && s.style.display === "none") {
+                    l.style.display = "flex";
+                } else if (l.style.display === "none" && s.style.display === "flex"){
+                    s.style.display = "none";
+                } else { 
+                    l.style.display = "none";   
+                }
+            }
+            function changeToSingInMenu(){
+                document.getElementById("login").style.display = "none";
+                document.getElementById("signin").style.display = "flex";
+            }
+            function changeToLogInMenu(){
+                document.getElementById("login").style.display = "flex";
+                document.getElementById("signin").style.display = "none";
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div class="nav">
+                <div class="icono">
+                    <a href="./index.html"><img src="https://politecnics.barcelona/wp-content/uploads/favicon-politecnics.png"></a>
+                </div>
+                <div class="nav_options">
+                    <nav>
+                        <ul>
+                            <li><a href="./index.html">INICIO</a></li>
+                            <li><a href="./noticias-index.html">NOTICIAS</a></li>
+                            <li><a href="./error404.html">CONTACTO</a></li>
+                        </ul>
+                        
+                    </nav>
+                    <button class="login_button" onclick="displayPopUp()"><i class="fa-solid fa-user"></i></button>
+                </div>
+            </div>
+        </header>
+
+        <div class="frame_popup" id="login" style="display: none;">
+            <div class="popup_container">
+                <button id="popup_exit" onclick="displayPopUp()"><i class="fa-sharp fa-solid fa-circle-xmark"></i></button>
+                <div>
+                    <lottie-player class="lottie_popup" id="login_lottie" src="https://assets9.lottiefiles.com/packages/lf20_cmuqpnnl.json" speed="0.8" loop autoplay></lottie-player>
+                </div>
+                <div class="popup_form">
+                    <form>
+                        <input type="text" name="log_name" placeholder="Username" required>
+                        <input type="password" name="log_passwd" placeholder="Password" required>
+                        <h6><a href="./error404.html">¿Has olvidado la contraseña?</a></h6>
+                        <input type="submit" value="Iniciar Sesión">
+                        <h6>¿Aún no tienes cuenta?<a onclick="changeToSingInMenu()">  Regístrate</a></h6>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="frame_popup" id="signin" style="display: none;">
+            <div class="popup_container">
+                <button id="popup_exit" onclick="displayPopUp()"><i class="fa-sharp fa-solid fa-circle-xmark"></i></button>
+                <div>
+                    <lottie-player class="lottie_popup" id="signin_lottie" src="https://assets9.lottiefiles.com/packages/lf20_cmuqpnnl.json" speed="0.8" loop autoplay></lottie-player>
+                </div>
+                <div class="popup_form">
+                    <form>
+                        <input type="email" name="sign_emain" placeholder="Email" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required>
+                        <input type="text" name="sign_name" placeholder="Username" required>
+                        <div class="flex_form_popup">
+                            <input type="password" name="sign_passwd" placeholder="Password" required>
+                            <input type="password" name="sign_rpasswd" placeholder="Repeat password" required>
+                        </div>
+                        <label><input type="checkbox" name="sign_politica" required> Acepto la <a href="error404.html">Política de Privacidad</a></label><br>
+                        <label><input type="checkbox" name="sign_newsletter"> Quiero subscribirme a vuestra Newsletter</label>
+                        <input type="submit" value="Registrarse">
+                        <h6>Ya tengo cuenta<a onclick="changeToLogInMenu()">  Iniciar Sesion</a></h6>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        
+
+        
+        <div class="lottie" style="margin:200px 0px;">
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_vfpu2rpp.json" speed="0.7" style="width: 800px;" loop autoplay></lottie-player>
+        </div>
+
+
+        
+
+
+        <footer>
+            <div class="social_icons">
+                <ul>
+                    <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-square-facebook"></i></a></li>
+                    <li><a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></div></a></li>
+                </ul>
+            </div>
+            <div class="terms">
+                <ul>
+                    <li><a href="../error404.html">Terminos y Condiciones</a></li>
+                    <li><a href="../error404.html">Politica de Privacidad</a></li>
+                    <li><a href="../error404.html">Politica de Cockies</a></li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h6>DEV. Javier Díaz Neira</h4>
+                <h6>javier.diaz51202@gmail.com</h5>
+            </div>
+        </footer>
+    </body>
+</html>
