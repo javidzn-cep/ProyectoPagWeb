@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Javier Díaz - Mi página Web</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" > 
+        <link rel="icon" href="https://politecnics.barcelona/wp-content/uploads/favicon-politecnics.png">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script src="https://kit.fontawesome.com/06b3e2e45a.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <link rel="stylesheet" href="./style.css">
+        <script>
+            function displayPopUp(){
+                var l = document.getElementById("login");
+                var s = document.getElementById("signin");
+                var b = document.getElementById("darkbg");
+                var c = document.getElementsByClassName("popup_container");
+                if (l.style.display === "none" && s.style.display === "none") {
+                    l.style.display = "flex";
+                    b.style.display = "block";
+                    c.style.display = "flex"
+                } else if (l.style.display === "none" && s.style.display === "flex"){
+                    s.style.display = "none";
+                    b.style.display = "none";
+                    c.style.display = "none" 
+                } else {
+                    s.style.display = "none";
+                    l.style.display = "none";
+                    b.style.display = "none";
+                    c.style.display = "none" 
+                }
+            }
+            function changeToSingInMenu(){
+                document.getElementById("login").style.display = "none";
+                document.getElementById("signin").style.display = "flex";
+            }
+            function changeToLogInMenu(){
+                document.getElementById("login").style.display = "flex";
+                document.getElementById("signin").style.display = "none";
+            }
+            function showPassword(){
+                var p = document.getElementById("passwd");
+                if (p.type === "password"){
+                    p.type = "text";
+                } else{
+                    p.type = "password";;
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div class="nav">
+                <div class="icono">
+                    <a href="./index.html"><img src="https://logodownload.org/wp-content/uploads/2016/11/formula-1-logo-1-1.png"></a>
+                </div>
+                <div class="nav_options">
+                    <nav>
+                        <ul>
+                            <li><a href="./index.html">INICIO</a></li>
+                            <li><a href="./noticias-index.html">NOTICIAS</a></li>
+                            <li><a href="./error404.html">CONTACTO</a></li>
+                        </ul>
+                        
+                    </nav>
+                    <button class="login_button" onclick="displayPopUp()"><i class="fa-solid fa-user"></i></button>
+                </div>
+            </div>
+        </header>
+
+        <div id="darkbg" style="display: none;">
+            <div class="popup_container">
+                <div id="login" style="display: none;">
+                    <button id="popup_exit" onclick="displayPopUp()"><i class="fa-sharp fa-solid fa-circle-xmark"></i></button>
+                    <div>
+                        <lottie-player class="lottie_popup" id="login_lottie" src="https://assets9.lottiefiles.com/packages/lf20_cmuqpnnl.json" speed="0.8" loop autoplay></lottie-player>
+                    </div>
+                    <div class="popup_form">
+                        <form>
+                            <input type="text" name="log_name" placeholder="Username" required>
+                            <div class="input_password">
+                                <input type="password" id="passwd" name="log_passwd" placeholder="Password" required>
+                                <i class="fa-solid fa-eye" onclick="showPassword()"></i>
+                            </div>
+                            <h6><a href="./error404.html">¿Has olvidado la contraseña?</a></h6>
+                            <input type="submit" value="Iniciar Sesión">
+                            <h6>¿Aún no tienes cuenta?<a onclick="changeToSingInMenu()">  Regístrate</a></h6>
+                        </form>
+                    </div>
+                </div>
+                <div id="signin" style="display: none;">
+                    <button id="popup_exit" onclick="displayPopUp()"><i class="fa-sharp fa-solid fa-circle-xmark"></i></button>
+                    <div>
+                        <lottie-player class="lottie_popup" id="signin_lottie" src="https://assets9.lottiefiles.com/packages/lf20_cmuqpnnl.json" speed="0.8" loop autoplay></lottie-player>
+                    </div>
+                    <div class="popup_form">
+                        <form>
+                            <input type="email" name="sign_emain" placeholder="Email" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required>
+                            <input type="text" name="sign_name" placeholder="Username" required>
+                            <div class="flex_form_popup">
+                                <input type="password" name="sign_passwd" placeholder="Password" required>
+                                <input type="password" name="sign_rpasswd" placeholder="Repeat password" required>
+                            </div>
+                            <label><input type="checkbox" name="sign_politica" required> Acepto la <a href="error404.html">Política de Privacidad</a></label><br>
+                            <label><input type="checkbox" name="sign_newsletter"> Quiero subscribirme a vuestra Newsletter</label>
+                            <input type="submit" value="Registrarse">
+                            <h6>Ya tengo cuenta<a onclick="changeToLogInMenu()">  Iniciar Sesion</a></h6>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bgtittle">
+            <div class="tittle">
+                <h1>F1 NEWS</h1>
+            </div>
+        </div>
+            
+
+
+        
+
+        
+        <div class="lottie" style="margin:200px 0px;">
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_vfpu2rpp.json" speed="0.7" style="width: 800px;" loop autoplay></lottie-player>
+        </div>
+
+
+        
+        <div class="enlaces_interes">
+            <h1>ENLACES DE INTERES</h1>
+            <ul>
+                <li>
+                    <a href="https://www.marca.com/motor/formula1.html" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Marca.svg">
+                        <h5>Diario MARCA F1</h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.dazn.com/es-ES/welcome" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/DAZN_logo.svg">
+                        <h5>DAZN</h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.formula1.com/" target="_blank">
+                        <img src="https://logodownload.org/wp-content/uploads/2016/11/formula-1-logo-5-2.png">
+                        <h5>Página Oficial F1</h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://as.com/motor/formula_1/" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Diario_AS.svg">
+                        <h5>Diario AS F1</h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://soymotor.com/" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/MundoDeportivo.svg">
+                        <h5>MundoDeportivo F1</h5>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <footer>
+            <div class="social_icons">
+                <ul>
+                    <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-square-facebook"></i></a></li>
+                    <li><a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></div></a></li>
+                </ul>
+            </div>
+            <div class="terms">
+                <ul>
+                    <li><a href="../error404.html">Terminos y Condiciones</a></li>
+                    <li><a href="../error404.html">Politica de Privacidad</a></li>
+                    <li><a href="../error404.html">Politica de Cockies</a></li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h6>DEV. Javier Díaz Neira</h4>
+                <h6>javier.diaz51202@gmail.com</h5>
+            </div>
+        </footer>
+    </body>
+</html>
