@@ -12,6 +12,7 @@ body, html{
     font-family: Montserrat;
     color: var(--color_text_default);
     scroll-behavior: smooth;
+    z-index: 1
 }
 
 header{
@@ -93,13 +94,6 @@ button, a{
 .login_button:active{
     background-color: rgb(48, 48, 48);
     transition: 0s;
-}
-
-.lottie{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 0;
 }
 
 footer{
@@ -185,7 +179,7 @@ footer{
     margin: 25px 50px;
 }
 
-.lottie, .lottie_404{
+.lottie_404{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -220,7 +214,7 @@ footer{
     backdrop-filter: blur(14px);
     border-radius: 20px;
     transition: all 0.8s;
-    /*overflow: hidden;*/
+    /* overflow: hidden; */
     z-index: 100;
     animation-name: showPopupFrame;
     animation-duration: 1s;
@@ -240,7 +234,7 @@ footer{
 
 .lottie_popup{
     opacity: 0.5;
-    margin-bottom: 90px;
+    margin-bottom: 80px;
 }
 
 #login_lottie{
@@ -276,21 +270,32 @@ footer{
     margin: 20px 70px;
 }
 
-#signin input[type="password"]{
+#signin .input_password input{
     width: 197px;
 }
 
-#signin input[type="password"]:nth-of-type(1){
+#signin .input_password:nth-of-type(1) input{
     margin: 20px 0px 20px 71px;
 }
 
-#signin input[type="password"]:nth-of-type(2){
-    margin: 20px 0px 20px 25px;
+#signin .input_password:nth-of-type(2) input{
+    margin: 20px 0px;
+}
+
+.input_password i{
+    width: 20px;
+    transition: 0.5s;
+}
+.input_password i:hover{
+    cursor: pointer;
+
 }
 
 .popup_form input:not([type="submit"], [type="checkbox"]):focus{
     background-color: rgba(255, 255, 255, 0.8);
 }
+
+
 .popup_form input[type="submit"]{
     padding: 10px 50px;
     margin: 20px 230px 0px;
@@ -314,12 +319,26 @@ footer{
     accent-color: rgb(90, 90, 90);
 }
 
-.input_password i{
-    position:relative;
+#login .input_password i{
+    position: relative;
     top: -52px;
     right: -520px;
     z-index: 10;
-    color: rgb(59, 59, 59);
+}
+#signin .input_password i{
+    position: relative;
+    right: 32px;
+    z-index: 10;
+}
+
+
+.input_password i{
+    color: rgb(124, 124, 124);
+    transition: 0.5s;
+}
+.input_password i:hover{
+    color: rgb(68, 68, 68);
+    
 }
 
 .popup_form a{
@@ -511,14 +530,16 @@ label{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("https://img.redbull.com/images/c_crop,x_0,y_188,h_2491,w_4428/c_fill,w_1000,h_640/q_auto,f_auto/redbullcom/2022/6/30/hbad1ecz5nqcl5z741xv/sergio-perez-lewis-hamilton-f1-gp-bahein-2022");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     height: 800px;
     width: 100%;
-
+    z-index: 1;
+}
+.bgtittle video{
+    object-fit: cover;
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    top: 50px;
 }
 
 .tittle{
@@ -531,6 +552,7 @@ label{
     font-size: 100px;
     font-weight: bolder;
     mix-blend-mode: screen;
+    position: sticky;
 }
 .tittle h1{
     margin: 0px;
